@@ -7,7 +7,7 @@
          id = "WebApp_ID" version="2.5">
 
     <welcome-file-list>
-        <welcome-file>index.xhtml</welcome-file>
+        <welcome-file>generalForms/index.xhtml</welcome-file>
     </welcome-file-list>
 
     <!--

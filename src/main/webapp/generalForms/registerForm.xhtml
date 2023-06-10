@@ -15,22 +15,23 @@
     <div id="registerPanel">
         <h:form>
             <h:outputLabel for="firstName">Imię</h:outputLabel>
-            <p:inputText id="firstName" type="text" required="true"/>
+            <p:inputText id="firstName" type="text"/>
             <h:outputLabel for="lastName">Nazwisko</h:outputLabel>
-            <p:inputText id="lastName" type="text" required="true"/>
+            <p:inputText id="lastName" type="text"/>
+            <h:outputLabel for="login">Login</h:outputLabel>
+            <p:inputText id="login" type="text"/>
             <h:outputLabel for="password">Hasło</h:outputLabel>
-            <p:inputText id="password" type="password" required="true"/>
+            <p:inputText id="password" type="password"/>
             <h:outputLabel for="passwordRepeated">Powtórz hasło</h:outputLabel>
-            <p:inputText id="passwordRepeated" type="password" required="true"/>
+            <p:inputText id="passwordRepeated" type="password"/>
             <h:outputLabel for="accountType">Rodzaj konta</h:outputLabel>
             <p:selectOneMenu id="accountType" value="#{registerController.selectedAccountType}">
                 <f:selectItem itemLabel="Użytkownik" itemValue="user"/>
                 <f:selectItem itemLabel="Pracownik" itemValue="employee"/>
-                <f:selectItem itemLabel="Admin" itemValue="admin"/>
             </p:selectOneMenu>
             <div id="lowerButtonSection">
-                <p:commandButton action="index.xhtml?faces-redirect=true" value="Wstecz"/>
-                <p:commandButton action="registerConfirmation.xhtml?faces-redirect=true" value="Zarejestruj się"/>
+                <p:commandButton action="#{redirectUtil.redirectToIndexPage()}" value="Wstecz"/>
+                <p:commandButton action="#{registerController.register()}" value="Zarejestruj się"/>
             </div>
         </h:form>
     </div>

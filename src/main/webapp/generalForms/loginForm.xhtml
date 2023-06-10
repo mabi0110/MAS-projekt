@@ -13,16 +13,18 @@
 </h:head>
 <h:body>
     <div id="loginPanel">
-        <h:form prependId="false">
+        <h:form id="loginForm">
             <h:outputLabel for="login">Login</h:outputLabel>
-            <p:inputText id="login" type="text" required="true" value="#{loginController.login}"/>
+            <p:inputText id="login" type="text" value="#{loginController.login}"/>
+            <h:message for="login"/>
             <h:outputLabel for="password">Hasło</h:outputLabel>
-            <p:inputText id="password" type="password" required="true" value="#{loginController.password}"/>
-            <h:messages for="login" showSummary="true" style="color: darkred"/>
+            <p:inputText id="password" type="password" value="#{loginController.password}"/>
+            <h:message for="password"/>
             <div id="lowerButtonSection">
-                <p:commandButton action="index.xhtml?faces-redirect=true" value="Wstecz"/>
+                <p:commandButton action="#{redirectUtil.redirectToIndexPage()}" value="Wstecz"/>
                 <p:commandButton id="loginButton" action="#{loginController.login()}" value="Zaloguj się"/>
             </div>
+            <h:message for="loginButton" showSummary="true"/>
         </h:form>
     </div>
 </h:body>

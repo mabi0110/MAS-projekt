@@ -1,0 +1,73 @@
+body {
+    text-align: center;
+    background: url("../images/background.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#title {
+    margin: 20px auto;
+    font: 40px calibri;
+    letter-spacing: 4px;
+    text-align: center;
+    color: #9f98b1;
+}
+
+#mainPanel, #loginPanel, #registerPanel {
+    width: 400px;
+    margin: 30px auto;
+    padding: 15px 0 0;
+    background: #544c6e;
+    border: 1px solid #9f98b1;
+    font: 16px calibri;
+    letter-spacing: -1px;
+    -webkit-box-shadow: 0 0 2px #9f98b1;
+    -moz-box-shadow: 0 0 2px #9f98b1;
+    box-shadow: 0 0 2px #9f98b1;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+}
+
+label {
+    display: block;
+    width: 260px;
+    padding: 10px 35px;
+    color: #9f98b1;
+    font-size: 16px;
+    text-shadow: 0 0 1px silver;
+    text-align: left;
+}
+
+#lowerButtonSection {
+    background: #544c6e;
+    width: 398px;
+    padding: 20px 20px;
+    margin-top: 20px;
+    border-radius: 0 0 8px 8px;
+}
+
+.ui-button {
+    border-color: #9f98b1!important;
+    background-color: #484062!important;
+    color: #9f98b1!important;
+}
+
+.ui-inputfield {
+    display: block!important;
+    width: 360px!important;
+    margin: 0 auto!important;
+    padding: 10px 15px!important;
+    border: 1px solid #9f98b1!important;
+    outline: 1px solid #9f98b1!important;
+    font-size: 22px!important;
+    color: #9f98b1!important;
+    background-color: #635b8b!important;
+}
+
+/*.ui-inputfield:focus, .ui-button:focus {*/
+/*    outline: 1px solid #9f98b1!important;*/
+/*}*/
+

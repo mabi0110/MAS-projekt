@@ -13,12 +13,11 @@
 
 <h:body>
     <div id="mainPanel">
-        <img id="logo" src="logo.png" alt="Logo PJATK" width="150" height="150"/>
         <h:outputLabel id="title">Biblioteka</h:outputLabel>
         <h:form>
             <div id="lowerButtonSection">
-                <p:commandButton id="leftButton" action="register.xhtml?faces-redirect=true" value="Zarejestruj się"/>
-                <p:commandButton id="rightButton" action="login.xhtml?faces-redirect=true" value="Zaloguj się"/>
+                <p:commandButton id="registerButton" action="#{redirectUtil.redirectToRegisterForm()}" value="Zarejestruj się"/>
+                <p:commandButton id="loginButton" action="#{redirectUtil.redirectToLoginForm()}" value="Zaloguj się"/>
             </div>
         </h:form>
     </div>
