@@ -1,10 +1,8 @@
-package com.example.biblioteka;
+package com.example.biblioteka.controllers;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
-import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
-import javax.servlet.ServletException;
 import java.io.IOException;
 import java.io.Serializable;
 

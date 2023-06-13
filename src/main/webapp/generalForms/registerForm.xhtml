@@ -9,25 +9,25 @@
 
 <h:head>
     <title>Logowanie</title>
-    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <link rel="stylesheet" type="text/css" href="../style/mainFormsStyle.css"/>
 </h:head>
 <h:body>
     <div id="registerPanel">
         <h:form>
             <h:outputLabel for="firstName">Imię</h:outputLabel>
-            <p:inputText id="firstName" type="text"/>
+            <p:inputText id="firstName" type="text" value="#{registerController.selectedFirstName}"/>
             <h:outputLabel for="lastName">Nazwisko</h:outputLabel>
-            <p:inputText id="lastName" type="text"/>
+            <p:inputText id="lastName" type="text" value="#{registerController.selectedLastName}"/>
             <h:outputLabel for="login">Login</h:outputLabel>
-            <p:inputText id="login" type="text"/>
+            <p:inputText id="login" type="text" value="#{registerController.selectedLogin}"/>
             <h:outputLabel for="password">Hasło</h:outputLabel>
-            <p:inputText id="password" type="password"/>
+            <p:inputText id="password" type="password" value="#{registerController.selectedPass}"/>
             <h:outputLabel for="passwordRepeated">Powtórz hasło</h:outputLabel>
             <p:inputText id="passwordRepeated" type="password"/>
             <h:outputLabel for="accountType">Rodzaj konta</h:outputLabel>
             <p:selectOneMenu id="accountType" value="#{registerController.selectedAccountType}">
-                <f:selectItem itemLabel="Użytkownik" itemValue="user"/>
-                <f:selectItem itemLabel="Pracownik" itemValue="employee"/>
+                <f:selectItem itemLabel="Użytkownik" itemValue="USER"/>
+                <f:selectItem itemLabel="Pracownik" itemValue="EMPLOYEE"/>
             </p:selectOneMenu>
             <div id="lowerButtonSection">
                 <p:commandButton action="#{redirectUtil.redirectToIndexPage()}" value="Wstecz"/>

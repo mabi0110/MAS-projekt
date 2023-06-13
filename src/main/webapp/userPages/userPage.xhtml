@@ -6,20 +6,15 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:p="http://primefaces.org/ui">
+
 <h:head>
-    <title>Biblioteka</title>
+    <title>User Panel</title>
+    <link rel="stylesheet" type="text/css" href="../style/userAndEmployeeStyle.css"/>
     <link rel="stylesheet" type="text/css" href="../style/mainFormsStyle.css"/>
 </h:head>
-
 <h:body>
-    <div id="mainPanel">
-        <h:outputLabel id="title">Biblioteka</h:outputLabel>
-        <h:form>
-            <div id="lowerButtonSection">
-                <p:commandButton id="registerButton" action="#{redirectUtil.redirectToRegisterForm()}" value="Zarejestruj się"/>
-                <p:commandButton id="loginButton" action="#{redirectUtil.redirectToLoginForm()}" value="Zaloguj się"/>
-            </div>
-        </h:form>
+    <div id="userPanel">
+        <h:outputLabel>User Panel</h:outputLabel>
     </div>
 </h:body>
 </html>

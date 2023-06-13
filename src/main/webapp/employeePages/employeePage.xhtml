@@ -8,18 +8,13 @@
       xmlns:p="http://primefaces.org/ui">
 
 <h:head>
-   <title>Logowanie</title>
-   <link rel="stylesheet" type="text/css" href="style.css"/>
+   <title>Employee Panel</title>
+   <link rel="stylesheet" type="text/css" href="../style/userAndEmployeeStyle.css"/>
+   <link rel="stylesheet" type="text/css" href="../style/mainFormsStyle.css"/>
 </h:head>
 <h:body>
-   <div id="registerPanel">
-      <h:form>
-         <h:outputLabel for="firstName">Imię</h:outputLabel>
-         <p:inputText id="firstName" type="text"/>
-         <div id="lowerButtonSection">
-            <p:commandButton action="#{redirectUtil.redirectToUserPage()}" value="Zarejestruj się"/>
-         </div>
-      </h:form>
+   <div id="employeePanel">
+      <h:outputLabel>Employee Panel</h:outputLabel>
    </div>
 </h:body>
 </html>

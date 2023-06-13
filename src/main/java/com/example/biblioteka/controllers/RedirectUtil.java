@@ -1,4 +1,4 @@
-package com.example.biblioteka;
+package com.example.biblioteka.controllers;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.ExternalContext;
@@ -9,11 +9,13 @@ import java.io.IOException;
 public class RedirectUtil {
 
     public static final String GENERAL_FORMS = "/generalForms";
+    public static final String EMPLOYEE_PAGES = "/employeePages";
+    public static final String USER_PAGES = "/userPages";
     public static final String INDEX_PAGE = "/index.xhtml";
     public static final String LOGIN_FORM = "/loginForm.xhtml";
     public static final String REGISTER_FORM = "/registerForm.xhtml";
-    public static final String USER_PAGE = "/userPage.xhtml";
-    public static final String EMPLOYEE_PAGE = "/employeePage.xhtml";
+    public static final String USER_MAIN_PAGE = "/userPage.xhtml";
+    public static final String EMPLOYEE_MAIN_PAGE = "/employeePage.xhtml";
     public static final String ADDITIONAL_USER_DATA = "/additionalUserDataForm.xhtml";
 
 
@@ -29,16 +31,16 @@ public class RedirectUtil {
         redirect(GENERAL_FORMS + REGISTER_FORM);
     }
 
-    public static void redirectToAdditionalUserDataPage() throws IOException {
-        redirect(GENERAL_FORMS + ADDITIONAL_USER_DATA);
+    public static void redirectToAdditionalUserDataForm() throws IOException {
+        redirect(USER_PAGES + ADDITIONAL_USER_DATA);
     }
 
     public static void redirectToUserPage() throws IOException {
-        redirect(USER_PAGE);
+        redirect(USER_PAGES + USER_MAIN_PAGE);
     }
 
     public static void redirectToEmployeePage() throws IOException {
-        redirect(EMPLOYEE_PAGE);
+        redirect(EMPLOYEE_PAGES + EMPLOYEE_MAIN_PAGE);
     }
 
     private static void redirect(String path) throws IOException{
