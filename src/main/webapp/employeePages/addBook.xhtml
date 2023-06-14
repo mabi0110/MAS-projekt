@@ -60,23 +60,20 @@
       <div id="addBookPanel">
          <h:form>
             <h:outputLabel for="title">Tytuł</h:outputLabel>
-            <p:inputText id="title" type="text"/>
+            <p:inputText id="title" type="text" value="#{bookController.selectedTitle}"/>
             <h:outputLabel for="publisher">Wydawnictwo</h:outputLabel>
-            <p:inputText id="publisher" type="text"/>
-            <h:outputLabel for="homeNumber">Rok wydania</h:outputLabel>
-            <p:inputNumber id="homeNumber"/>
+            <p:inputText id="publisher" type="text" value="#{bookController.selectedPublisher}"/>
+            <h:outputLabel for="publicationYear">Rok wydania</h:outputLabel>
+            <p:inputNumber id="publicationYear" value="#{bookController.selectedPublicationYear}" />
             <h:outputLabel for="authorFirstName">Imię autora</h:outputLabel>
             <p:inputText id="authorFirstName" type="text"/>
             <h:outputLabel for="authorLastName">Nazwisko autora</h:outputLabel>
             <p:inputText id="authorLastName" type="text"/>
             <div id="lowerButtonSection">
-               <p:commandButton value="Dodaj"/>
+               <p:commandButton value="Dodaj" action="#{bookController.saveBook()}"/>
             </div>
          </h:form>
       </div>
-
-
-
    </div>
 
 </h:body>
