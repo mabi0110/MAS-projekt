@@ -7,6 +7,7 @@ import javax.naming.NamingException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class PersonDao {
 
@@ -19,8 +20,8 @@ public class PersonDao {
         }
     }
 
-    public List<Person> findAllWithQuery(String sql) {
-        List<Person> resultList = new ArrayList<>();
+    public Optional<Person> findPersonWithLoginAndPassword(String selectedLogin, String selectedPassword){
+        String sql = "SELECT id, firstName, lastName, login, pass, accountType from person where login='" + selectedLogin + "' and pass='" + selectedPassword + "'";
         try (Connection connection = dataSource.getConnection();
              Statement statement = connection.createStatement()) {
             ResultSet resultSet = statement.executeQuery(sql);
@@ -31,12 +32,12 @@ public class PersonDao {
                 String login = resultSet.getString("login");
                 String pass = resultSet.getString("pass");
                 String accountType = resultSet.getString("accountType");
-                resultList.add(new Person(id, firstName, lastName, login, pass, accountType));
+                return Optional.of(new Person(id, firstName, lastName, login, pass, accountType));
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        return resultList;
+        return Optional.empty();
     }
 
     public void save(Person person) {

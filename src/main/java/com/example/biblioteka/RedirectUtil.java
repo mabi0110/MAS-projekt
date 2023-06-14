@@ -1,4 +1,4 @@
-package com.example.biblioteka.controllers;
+package com.example.biblioteka;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.ExternalContext;

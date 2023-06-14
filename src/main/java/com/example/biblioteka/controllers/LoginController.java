@@ -1,44 +1,35 @@
 package com.example.biblioteka.controllers;
 
-import javax.faces.application.FacesMessage;
+import com.example.biblioteka.PersonDao;
+import com.example.biblioteka.RedirectUtil;
+import com.example.biblioteka.model.Person;
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.faces.bean.ManagedBean;
-import javax.faces.context.FacesContext;
+import javax.faces.bean.RequestScoped;
 import java.io.IOException;
 import java.io.Serializable;
+import java.util.Optional;
 
 @ManagedBean
+@RequestScoped
+@Getter
+@Setter
 public class LoginController implements Serializable {
-
-    private static final String LOGIN_BUTTON="loginForm:loginButton";
-    private String login;
-
-    private String password;
-
-    public String getLogin() {
-        return login;
-    }
-
-    public void setLogin(String login) {
-        this.login = login;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
+    private final PersonDao personDao = new PersonDao();
+    private String selectedLogin;
+    private String selectedPassword;
 
     public void login() throws IOException {
-        if (("user").equals(login) && ("user").equals(password)) {
+        Optional<Person> personWithLoginAndPassword = personDao.findPersonWithLoginAndPassword(selectedLogin, selectedPassword);
+        Person person = personWithLoginAndPassword.get();
+        if ((("USER").equals(person.getAccountType()))) {
             RedirectUtil.redirectToUserPage();
-        } else if (("admin").equals(login) && ("admin").equals(password)) {
+        } else if ((("EMPLOYEE").equals(person.getAccountType()))){
             RedirectUtil.redirectToEmployeePage();
-        } else {
-            FacesContext context = FacesContext.getCurrentInstance();
-            context.addMessage(LOGIN_BUTTON, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Niepoprawne dane logowania", null));
-            RedirectUtil.redirectToLoginForm();
         }
     }
+
+
 }

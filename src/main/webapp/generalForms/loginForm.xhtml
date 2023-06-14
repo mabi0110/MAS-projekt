@@ -15,10 +15,10 @@
     <div id="loginPanel">
         <h:form id="loginForm">
             <h:outputLabel for="login">Login</h:outputLabel>
-            <p:inputText id="login" type="text" value="#{loginController.login}"/>
+            <p:inputText id="login" type="text" value="#{loginController.selectedLogin}"/>
             <h:message for="login"/>
             <h:outputLabel for="password">Hasło</h:outputLabel>
-            <p:inputText id="password" type="password" value="#{loginController.password}"/>
+            <p:inputText id="password" type="password" value="#{loginController.selectedPassword}"/>
             <h:message for="password"/>
             <div id="lowerButtonSection">
                 <p:commandButton action="#{redirectUtil.redirectToIndexPage()}" value="Wstecz"/>
