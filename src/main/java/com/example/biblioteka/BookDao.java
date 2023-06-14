@@ -22,8 +22,8 @@ public class BookDao {
     }
 
     public void save(Book book) {
-        final String sql = String.format("INSERT INTO book (title, publisher, publicationYear) VALUES('%s', '%s', %d)",
-                book.getTitle(), book.getPublisher(), book.getPublicationYear());
+        final String sql = String.format("INSERT INTO book (title, isbn, publisher, publicationYear) VALUES('%s', %d,'%s', %d)",
+                book.getTitle(), book.getIsbn(), book.getPublisher(), book.getPublicationYear());
         try (Connection connection = dataSource.getConnection();
              Statement statement = connection.createStatement()) {
             statement.executeUpdate(sql, Statement.RETURN_GENERATED_KEYS);

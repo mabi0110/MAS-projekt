@@ -14,6 +14,7 @@ import javax.faces.bean.RequestScoped;
 public class BookController {
 
     private String selectedTitle;
+    private int selectedISBN;
     private String selectedPublisher;
     private int selectedPublicationYear;
     private final BookDao bookDao = new BookDao();
@@ -26,6 +27,6 @@ public class BookController {
     }
 
     private Book createBook() {
-        return new Book(selectedTitle, selectedPublisher, selectedPublicationYear);
+        return new Book(selectedTitle, selectedISBN, selectedPublisher, selectedPublicationYear);
     }
 }

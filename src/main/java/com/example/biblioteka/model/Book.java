@@ -8,23 +8,25 @@ import lombok.Setter;
 public class Book {
     private int id;
     private String title;
+    private int isbn;
     private String publisher;
     private int publicationYear;
     private int authorId;
 
 
-    public Book(String title, String publisher, int publicationYear, int authorId) {
-        this(title, publisher, publicationYear);
+    public Book(String title, int isbn, String publisher, int publicationYear, int authorId) {
+        this(title, isbn, publisher, publicationYear);
         this.authorId = authorId;
     }
-    public Book(String title, String publisher, int publicationYear) {
+    public Book(String title, int isbn, String publisher, int publicationYear) {
         this.title = title;
+        this.isbn = isbn;
         this.publisher = publisher;
         this.publicationYear = publicationYear;
     }
 
-    public Book(int id, String title, String publisher, int publicationYear) {
-        this(title, publisher, publicationYear);
+    public Book(int id, String title, int isbn, String publisher, int publicationYear) {
+        this(title, isbn, publisher, publicationYear);
         this.id = id;
     }
 
@@ -33,6 +35,7 @@ public class Book {
         return "Book{" +
                 "id=" + id +
                 ", title='" + title + '\'' +
+                ", isbn=" + isbn +
                 ", publisher='" + publisher + '\'' +
                 ", publicationYear=" + publicationYear +
                 ", authorId=" + authorId +
