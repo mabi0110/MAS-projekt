@@ -1,8 +1,7 @@
 #userPanel, #employeePanel {
-    width: 1000px;
-    height: 800px;
+    width: 800px;
+    height: auto;
     margin: 30px auto;
-    padding: 30px 0 0;
     background: #544c6e;
     border: 1px solid #9f98b1;
     font: 16px calibri;
@@ -13,4 +12,30 @@
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px;
     border-radius: 8px;
+}
+
+#addBookPanel {
+    width: 400px;
+    margin: 30px auto;
+    padding: 15px 0 0;
+    background: #544c6e;
+    border: 1px solid #9f98b1;
+    font: 16px calibri;
+    letter-spacing: -1px;
+    -webkit-box-shadow: 0 0 2px #9f98b1;
+    -moz-box-shadow: 0 0 2px #9f98b1;
+    box-shadow: 0 0 2px #9f98b1;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+}
+
+.ui-menu, .ui-menubar, .ui-menuitem, .ui-widget, .ui-corner-all, .ui-menuitem-text {
+    background-color: #635b8b!important;
+    color: #9f98b1!important;
+}
+
+.ui-menu {
+    border: 1px solid #635b8b!important;
+    border-radius: 8px!important;
 }

@@ -8,7 +8,7 @@
       xmlns:p="http://primefaces.org/ui">
 
 <h:head>
-   <title>Employee Panel</title>
+   <title>Employee Panel 1</title>
    <link rel="stylesheet" type="text/css" href="../style/userAndEmployeeStyle.css"/>
    <link rel="stylesheet" type="text/css" href="../style/mainFormsStyle.css"/>
 </h:head>
@@ -30,7 +30,7 @@
             </p:submenu>
             <p:submenu label="Publikacje" icon="pi pi-fw pi-user">
                <p:submenu label="Książka">
-                  <p:menuitem value="Dodaj" icon="pi pi-fw pi-plus" outcome="addBook.xhtml">
+                  <p:menuitem value="Dodaj" icon="pi pi-fw pi-plus" outcome="employeePage1.xhtml">
                      <f:param name="i" value="3"/>
                   </p:menuitem>
                   <p:menuitem value="Usuń" icon="pi pi-fw pi-trash" outcome="employeePage1.xhtml">
@@ -56,7 +56,7 @@
             </p:submenu>
          </p:menubar>
       </div>
-      <h:outputLabel>Employee Panel</h:outputLabel>
+      <h:outputLabel>Employee Panel 1</h:outputLabel>
       <h:outputLabel>Zalogowany użytkownik: #{loginController.loggedPerson.firstName} #{loginController.loggedPerson.lastName}</h:outputLabel>
    </div>
 

@@ -8,7 +8,7 @@
       xmlns:p="http://primefaces.org/ui">
 
 <h:head>
-   <title>Employee Panel</title>
+   <title>Add Boook</title>
    <link rel="stylesheet" type="text/css" href="../style/userAndEmployeeStyle.css"/>
    <link rel="stylesheet" type="text/css" href="../style/mainFormsStyle.css"/>
 </h:head>
@@ -30,7 +30,7 @@
             </p:submenu>
             <p:submenu label="Publikacje" icon="pi pi-fw pi-user">
                <p:submenu label="Książka">
-                  <p:menuitem value="Dodaj" icon="pi pi-fw pi-plus" outcome="addBook.xhtml">
+                  <p:menuitem value="Dodaj" icon="pi pi-fw pi-plus" outcome="employeePage1.xhtml">
                      <f:param name="i" value="3"/>
                   </p:menuitem>
                   <p:menuitem value="Usuń" icon="pi pi-fw pi-trash" outcome="employeePage1.xhtml">
@@ -56,8 +56,27 @@
             </p:submenu>
          </p:menubar>
       </div>
-      <h:outputLabel>Employee Panel</h:outputLabel>
-      <h:outputLabel>Zalogowany użytkownik: #{loginController.loggedPerson.firstName} #{loginController.loggedPerson.lastName}</h:outputLabel>
+      <h:outputLabel>Dodaj książkę</h:outputLabel>
+      <div id="addBookPanel">
+         <h:form>
+            <h:outputLabel for="title">Tytuł</h:outputLabel>
+            <p:inputText id="title" type="text"/>
+            <h:outputLabel for="publisher">Wydawnictwo</h:outputLabel>
+            <p:inputText id="publisher" type="text"/>
+            <h:outputLabel for="homeNumber">Rok wydania</h:outputLabel>
+            <p:inputNumber id="homeNumber"/>
+            <h:outputLabel for="authorFirstName">Imię autora</h:outputLabel>
+            <p:inputText id="authorFirstName" type="text"/>
+            <h:outputLabel for="authorLastName">Nazwisko autora</h:outputLabel>
+            <p:inputText id="authorLastName" type="text"/>
+            <div id="lowerButtonSection">
+               <p:commandButton value="Dodaj"/>
+            </div>
+         </h:form>
+      </div>
+
+
+
    </div>
 
 </h:body>
