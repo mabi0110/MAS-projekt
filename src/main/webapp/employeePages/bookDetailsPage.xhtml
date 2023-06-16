@@ -60,9 +60,12 @@
       <h:outputLabel>Szczegóły dotyczące książki </h:outputLabel>
 
       <div id="bookDetailsPanel">
-         <h:outputLabel>Tytuł: #{bookController.searchedBook.title}</h:outputLabel>
+         <h:outputLabel>Tytuł:</h:outputLabel>
+         <h:outputLabel>#{bookController.searchedBook.title}</h:outputLabel>
+         <h:outputLabel>Status książki:</h:outputLabel>
+         <h:outputLabel value="#{bookController.getBorrowWithBookId() != null ? 'wypożyczona' : 'wolna'}" />
          <div id="lowerButtonSection">
-            <p:commandButton value="Dalej" action="#{redirectUtil.redirectToFindBookForm()}"/>
+            <p:commandButton value="Wypożycz" action="#{redirectUtil.redirectToFindBookForm()}"/>
          </div>
       </div>
    </div>

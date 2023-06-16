@@ -1,13 +1,14 @@
 package com.example.biblioteka.controllers;
 
 import com.example.biblioteka.BookDao;
+import com.example.biblioteka.BorrowDao;
 import com.example.biblioteka.model.Book;
+import com.example.biblioteka.model.Borrow;
 import com.example.biblioteka.utils.RedirectUtil;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.faces.bean.ManagedBean;
-
 import javax.faces.bean.SessionScoped;
 import java.io.IOException;
 import java.util.Optional;
@@ -24,6 +25,12 @@ public class BookController {
     private Book searchedBook;
     private String searchedBookTitle;
     private final BookDao bookDao = new BookDao();
+    private final BorrowDao borrowDao = new BorrowDao();
+
+    public Borrow getBorrowWithBookId() {
+        Optional<Borrow> borrowOptional = borrowDao.findBorrowWithBookId(searchedBook.getId());
+        return borrowOptional.orElse(null);
+    }
     public void saveBook() {
         Book book = createBook();
         System.out.println(book);

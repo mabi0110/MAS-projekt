@@ -21,7 +21,6 @@ public class RegisterController {
     private String selectedLogin;
     private String selectedPass;
     private String selectedAccountType;
-
     private final PersonDao personDao = new PersonDao();
 
 
@@ -34,7 +33,7 @@ public class RegisterController {
         if (("USER").equals(selectedAccountType)) {
             RedirectUtil.redirectToAdditionalUserDataForm();
         } else {
-            RedirectUtil.redirectToEmployeePage();
+            RedirectUtil.redirectToLoginForm();
         }
     }
 }
