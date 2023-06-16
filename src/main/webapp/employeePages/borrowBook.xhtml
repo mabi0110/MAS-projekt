@@ -8,19 +8,11 @@
       xmlns:p="http://primefaces.org/ui">
 
 <h:head>
-   <title>Employee Panel</title>
+   <title>Borrow Book</title>
    <link rel="stylesheet" type="text/css" href="../style/userAndEmployeeStyle.css"/>
    <link rel="stylesheet" type="text/css" href="../style/mainFormsStyle.css"/>
 </h:head>
 <h:body>
-
-<!--   <ui:composition template="employeeTemplate.xhtml">-->
-<!--      <ui:define name="content">-->
-<!--         <h:outputLabel>Panel pracownika</h:outputLabel>-->
-<!--         <h:outputLabel>Zalogowany użytkownik: #{loginController.loggedPerson.firstName} #{loginController.loggedPerson.lastName}</h:outputLabel>-->
-<!--      </ui:define>-->
-<!--   </ui:composition>-->
-
 
    <div id="employeePanel">
       <div id="navigationPanel">
@@ -65,9 +57,21 @@
          </p:menubar>
       </div>
 
-      <h:outputLabel>Panel pracownika</h:outputLabel>
-      <h:outputLabel>Zalogowany użytkownik: #{loginController.loggedPerson.firstName} #{loginController.loggedPerson.lastName}</h:outputLabel>
+      <h:outputLabel>Dodaj wypożyczenie</h:outputLabel>
+      <div id="borrowBookPanel">
+         <h:form>
+            <h:outputLabel>Znajdź użytkownika</h:outputLabel>
+            <h:outputLabel for="firstName">Imię</h:outputLabel>
+            <p:inputText id="firstName" type="text" value="#{userController.selectedFirstName}"/>
+            <h:outputLabel for="lastName">Nazwisko</h:outputLabel>
+            <p:inputText id="lastName" type="text" value="#{userController.selectedLastName}"/>
+            <div id="lowerButtonSection">
+               <p:commandButton value="Szukaj" action="#{userController.showUserDetails()}"/>
+            </div>
+         </h:form>
+      </div>
 
    </div>
+
 </h:body>
 </html>

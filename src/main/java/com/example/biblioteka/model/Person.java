@@ -21,6 +21,11 @@ public class Person {
         this.accountType = accountType;
     }
 
+    public Person(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
     public Person(Integer id, String firstName, String lastName, String login, String pass, String accountType) {
         this(firstName, lastName, login, pass, accountType);
         this.id = id;

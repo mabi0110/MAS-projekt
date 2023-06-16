@@ -5,8 +5,6 @@ import com.example.biblioteka.model.Person;
 import javax.sql.DataSource;
 import javax.naming.NamingException;
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 
 public class PersonDao {
@@ -18,6 +16,28 @@ public class PersonDao {
         } catch (NamingException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public Optional<Person> findUserWithFirstAndLastName(String userFirstName, String userLastName){
+        String sql = "SELECT id, firstName, lastName, login, pass, accountType from person " +
+                "where firstName='" + userFirstName + "' and lastName='" + userLastName +
+                "' and accountType='USER'";
+        try (Connection connection = dataSource.getConnection();
+             Statement statement = connection.createStatement()) {
+            ResultSet resultSet = statement.executeQuery(sql);
+            while (resultSet.next()) {
+                Integer id = resultSet.getInt("id");
+                String firstName = resultSet.getString("firstName");
+                String lastName = resultSet.getString("lastName");
+                String login = resultSet.getString("login");
+                String pass = resultSet.getString("pass");
+                String accountType = resultSet.getString("accountType");
+                return Optional.of(new Person(id, firstName, lastName, login, pass, accountType));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return Optional.empty();
     }
 
     public Optional<Person> findPersonWithLoginAndPassword(String selectedLogin, String selectedPassword){

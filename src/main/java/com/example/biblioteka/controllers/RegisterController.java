@@ -1,7 +1,7 @@
 package com.example.biblioteka.controllers;
 
 import com.example.biblioteka.PersonDao;
-import com.example.biblioteka.RedirectUtil;
+import com.example.biblioteka.utils.RedirectUtil;
 import com.example.biblioteka.model.Person;
 import lombok.Getter;
 import lombok.Setter;

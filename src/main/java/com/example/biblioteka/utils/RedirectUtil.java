@@ -1,4 +1,4 @@
-package com.example.biblioteka;
+package com.example.biblioteka.utils;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.ExternalContext;
@@ -17,6 +17,7 @@ public class RedirectUtil {
     public static final String USER_MAIN_PAGE = "/userPage.xhtml";
     public static final String EMPLOYEE_MAIN_PAGE = "/employeePage.xhtml";
     public static final String ADDITIONAL_USER_DATA = "/additionalUserDataForm.xhtml";
+    private static final String USER_DETAILS_PAGE = "/userDetailsPage.xhtml";
 
 
     public static void redirectToIndexPage() throws IOException {
@@ -33,6 +34,10 @@ public class RedirectUtil {
 
     public static void redirectToAdditionalUserDataForm() throws IOException {
         redirect(USER_PAGES + ADDITIONAL_USER_DATA);
+    }
+
+    public static void redirectToUserDetailsPage() throws IOException {
+        redirect(EMPLOYEE_PAGES + USER_DETAILS_PAGE);
     }
 
     public static void redirectToUserPage() throws IOException {
