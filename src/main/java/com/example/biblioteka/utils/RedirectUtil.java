@@ -18,6 +18,8 @@ public class RedirectUtil {
     public static final String EMPLOYEE_MAIN_PAGE = "/employeePage.xhtml";
     public static final String ADDITIONAL_USER_DATA = "/additionalUserDataForm.xhtml";
     private static final String USER_DETAILS_PAGE = "/userDetailsPage.xhtml";
+    private static final String BOOK_DETAILS_PAGE = "/bookDetailsPage.xhtml";
+    private static final String FIND_BOOK_FORM = "/findBookForm.xhtml";
 
 
     public static void redirectToIndexPage() throws IOException {
@@ -38,6 +40,14 @@ public class RedirectUtil {
 
     public static void redirectToUserDetailsPage() throws IOException {
         redirect(EMPLOYEE_PAGES + USER_DETAILS_PAGE);
+    }
+
+    public static void redirectToBookDetailsPage() throws IOException {
+        redirect(EMPLOYEE_PAGES + BOOK_DETAILS_PAGE);
+    }
+
+    public static void redirectToFindBookForm() throws IOException {
+        redirect(EMPLOYEE_PAGES + FIND_BOOK_FORM);
     }
 
     public static void redirectToUserPage() throws IOException {

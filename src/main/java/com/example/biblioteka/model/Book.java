@@ -13,6 +13,10 @@ public class Book {
     private int publicationYear;
     private int authorId;
 
+    public Book(int id, String title, int isbn, String publisher, int publicationYear, int authorId) {
+        this(title, isbn, publisher, publicationYear, authorId);
+        this.id = id;
+    }
 
     public Book(String title, int isbn, String publisher, int publicationYear, int authorId) {
         this(title, isbn, publisher, publicationYear);

@@ -14,7 +14,7 @@
     border-radius: 8px;
 }
 
-#addBookPanel, #borrowBookPanel {
+#addBookPanel, #borrowBookPanel, #userDetailsPanel, #bookDetailsPanel {
     width: 400px;
     margin: 30px auto;
     padding: 15px 0 0;
