@@ -8,30 +8,31 @@ import lombok.Setter;
 public class Book {
     private int id;
     private String title;
-    private int isbn;
+    private String isbn;
     private String publisher;
     private int publicationYear;
     private int authorId;
 
-    public Book(int id, String title, int isbn, String publisher, int publicationYear, int authorId) {
-        this(title, isbn, publisher, publicationYear, authorId);
-        this.id = id;
-    }
 
-    public Book(String title, int isbn, String publisher, int publicationYear, int authorId) {
-        this(title, isbn, publisher, publicationYear);
-        this.authorId = authorId;
-    }
-    public Book(String title, int isbn, String publisher, int publicationYear) {
+    public Book(String title, String isbn, String publisher, int publicationYear) {
         this.title = title;
         this.isbn = isbn;
         this.publisher = publisher;
         this.publicationYear = publicationYear;
     }
 
-    public Book(int id, String title, int isbn, String publisher, int publicationYear) {
-        this(title, isbn, publisher, publicationYear);
+    public Book(String title, String isbn, String publisher, int publicationYear, int authorId) {
+        this.title = title;
+        this.isbn = isbn;
+        this.publisher = publisher;
+        this.publicationYear = publicationYear;
+        this.authorId = authorId;
+    }
+
+    public Book(int id, String title, String isbn, String publisher, int publicationYear, int authorId) {
+        this(title, isbn, publisher, publicationYear, authorId);
         this.id = id;
+
     }
 
     @Override

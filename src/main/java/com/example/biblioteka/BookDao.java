@@ -1,8 +1,6 @@
 package com.example.biblioteka;
 
 import com.example.biblioteka.model.Book;
-import com.example.biblioteka.model.Person;
-
 
 import javax.naming.NamingException;
 import javax.sql.DataSource;
@@ -23,8 +21,9 @@ public class BookDao {
         }
     }
 
+
     public Optional<Book> findBookWithTitle(String bookTitle){
-        String sql = "SELECT id, title, isbn, publisher, publicationYear from book " +
+        String sql = "SELECT id, title, isbn, publisher, publicationYear, authorId from book " +
                 "where title='" + bookTitle + "'";
         try (Connection connection = dataSource.getConnection();
              Statement statement = connection.createStatement()) {
@@ -32,7 +31,7 @@ public class BookDao {
             while (resultSet.next()) {
                 Integer id = resultSet.getInt("id");
                 String title = resultSet.getString("title");
-                Integer isbn = resultSet.getInt("isbn");
+                String isbn = resultSet.getString("isbn");
                 String publisher = resultSet.getString("publisher");
                 Integer publicationYear = resultSet.getInt("publicationYear");
                 Integer authorId = resultSet.getInt("authorId");
