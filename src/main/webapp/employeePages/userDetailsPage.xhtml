@@ -58,7 +58,10 @@
       </div>
 
       <h:outputLabel>Szczegóły dotyczące użytkownika </h:outputLabel>
-      <h:outputLabel>Użytkownik: #{userController.searchedPerson.firstName} #{userController.searchedPerson.lastName}</h:outputLabel>
+      <h:outputLabel>Użytkownik:</h:outputLabel>
+      <h:outputLabel>Imię: #{userController.searchedPerson.firstName}</h:outputLabel>
+      <h:outputLabel>Nazwisko: #{userController.searchedPerson.lastName}</h:outputLabel>
+      <h:outputLabel>Liczba wypożyczeń: #{userController.getNumberOfUserBorrows()}</h:outputLabel>
    </div>
 
 </h:body>

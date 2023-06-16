@@ -6,6 +6,6 @@ public class UserAddress {
     private String street;
     private String homeNumber;
     private String flatNumber;
-    private Integer personId;
+    private Integer userId;
 
 }
