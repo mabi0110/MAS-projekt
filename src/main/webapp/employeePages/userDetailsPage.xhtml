@@ -62,7 +62,26 @@
       <h:outputLabel>Imię: #{userController.searchedPerson.firstName}</h:outputLabel>
       <h:outputLabel>Nazwisko: #{userController.searchedPerson.lastName}</h:outputLabel>
       <h:outputLabel>Liczba wypożyczeń: #{userController.getNumberOfUserBorrows()}</h:outputLabel>
-   </div>
+      <h:outputLabel>Wypożyczone ksiażki</h:outputLabel>
 
+      <h:dataTable value="#{userController.getListOfUserBorrows()}" var="borrow">
+         <h:column>
+            <f:facet name="header">ID</f:facet>
+            #{borrow.id}
+         </h:column>
+         <h:column>
+            <f:facet name="header">ID Użytkownika</f:facet>
+            #{borrow.userId}
+         </h:column>
+         <h:column>
+            <f:facet name="header">ID Książki</f:facet>
+            #{borrow.bookId}
+         </h:column>
+         <h:column>
+            <f:facet name="header">Data Wypożyczenia</f:facet>
+            #{borrow.borrowDate}
+         </h:column>
+      </h:dataTable>
+   </div>
 </h:body>
 </html>

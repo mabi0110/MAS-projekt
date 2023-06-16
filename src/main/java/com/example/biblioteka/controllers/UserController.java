@@ -27,10 +27,10 @@ public class UserController {
     private Person searchedPerson;
 
     public List<Borrow> getListOfUserBorrows() {
-        List<Borrow> borrowsWithUserId = borrowDao.findBorrowsWithUserId(searchedPerson.getId());
-        for (Borrow borrow : borrowsWithUserId) {
-            System.out.println(borrow);
-        }
+//        List<Borrow> borrowsWithUserId = borrowDao.findBorrowsWithUserId(searchedPerson.getId());
+//        for (Borrow borrow : borrowsWithUserId) {
+//            System.out.println(borrow);
+//        }
         return borrowDao.findBorrowsWithUserId(searchedPerson.getId());
     }
 
@@ -38,10 +38,9 @@ public class UserController {
         return getListOfUserBorrows().size();
     }
 
-
     public void showUserDetails() throws IOException {
         searchedPerson = getPersonFromDb();
-        System.out.println(searchedPerson);
+//        System.out.println(searchedPerson);
         RedirectUtil.redirectToUserDetailsPage();
     }
 
