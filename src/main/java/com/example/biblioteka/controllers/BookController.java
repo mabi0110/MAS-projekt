@@ -31,10 +31,10 @@ public class BookController {
         Optional<Borrow> borrowOptional = borrowDao.findBorrowWithBookId(searchedBook.getId());
         return borrowOptional.orElse(null);
     }
-    public void saveBook() {
+    public void saveBook() throws IOException {
         Book book = createBook();
-        System.out.println(book);
         bookDao.save(book);
+        RedirectUtil.redirectToEmployeePage();
     }
 
     private Book createBook() {
