@@ -62,9 +62,9 @@
          <h:form>
             <h:outputLabel>Znajdź książkę</h:outputLabel>
             <h:outputLabel for="title">Tytuł</h:outputLabel>
-            <p:inputText id="title" type="text" value="#{bookController.searchedBookTitle}"/>
+            <p:inputText id="title" type="text" value="#{borrowController.searchedBookTitle}"/>
             <div id="lowerButtonSection">
-               <p:commandButton value="Szukaj" action="#{bookController.showBookDetails()}"/>
+               <p:commandButton value="Szukaj" action="#{borrowController.showBookDetails()}"/>
             </div>
          </h:form>
       </div>

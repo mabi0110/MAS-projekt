@@ -62,11 +62,11 @@
          <h:form>
             <h:outputLabel>Znajdź użytkownika</h:outputLabel>
             <h:outputLabel for="firstName">Imię</h:outputLabel>
-            <p:inputText id="firstName" type="text" value="#{userController.selectedFirstName}"/>
+            <p:inputText id="firstName" type="text" value="#{borrowController.selectedFirstName}"/>
             <h:outputLabel for="lastName">Nazwisko</h:outputLabel>
-            <p:inputText id="lastName" type="text" value="#{userController.selectedLastName}"/>
+            <p:inputText id="lastName" type="text" value="#{borrowController.selectedLastName}"/>
             <div id="lowerButtonSection">
-               <p:commandButton value="Szukaj" action="#{userController.showUserDetails()}"/>
+               <p:commandButton value="Szukaj" action="#{borrowController.showUserDetails()}"/>
             </div>
          </h:form>
       </div>

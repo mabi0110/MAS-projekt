@@ -9,8 +9,8 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -34,7 +34,7 @@ public class BorrowDao {
                 Integer id = resultSet.getInt("id");
                 Integer userId = resultSet.getInt("userId");
                 Integer bookId = resultSet.getInt("bookId");
-                Date borrowDate = resultSet.getDate("borrowDate");
+                LocalDate borrowDate = resultSet.getDate("borrowDate").toLocalDate();
                 return Optional.of(new Borrow(id, userId, bookId, borrowDate));
             }
         } catch (SQLException e) {
@@ -52,7 +52,7 @@ public class BorrowDao {
                 Integer id = resultSet.getInt("id");
                 Integer userId = resultSet.getInt("userId");
                 Integer bookId = resultSet.getInt("bookId");
-                Date borrowDate = resultSet.getDate("borrowDate");
+                LocalDate borrowDate = resultSet.getDate("borrowDate").toLocalDate();
                 listOfBorrowedBooks.add(new Borrow(id, userId, bookId, borrowDate));
             }
         } catch (SQLException e) {
@@ -62,7 +62,7 @@ public class BorrowDao {
     }
 
 
-    public void save(Borrow borrow) {
+    public void borrowBook(Borrow borrow) {
         final String sql = String.format("INSERT INTO borrow (userId, bookId, borrowDate) VALUES(%d, %d,'%s')",
                 borrow.getUserId(), borrow.getBookId(), borrow.getBorrowDate().toString());
         try (Connection connection = dataSource.getConnection();

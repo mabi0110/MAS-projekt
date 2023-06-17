@@ -23,7 +23,6 @@ public class RegisterController {
     private String selectedAccountType;
     private final PersonDao personDao = new PersonDao();
 
-
     private Person createPerson(){
         return new Person(selectedFirstName, selectedLastName, selectedLogin, selectedPass, selectedAccountType);
     }

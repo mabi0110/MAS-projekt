@@ -43,13 +43,11 @@ public class BookController {
 
     public void showBookDetails() throws IOException {
         searchedBook = getBookFromDb();
-        System.out.println(searchedBook);
         RedirectUtil.redirectToBookDetailsPage();
     }
 
     private Book getBookFromDb() {
         Optional<Book> bookOptional = bookDao.findBookWithTitle(searchedBookTitle);
-        System.out.println(bookOptional.get());
         return bookOptional.orElse(null);
     }
 }

@@ -3,7 +3,7 @@ package com.example.biblioteka.model;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 @Getter
 @Setter
@@ -11,15 +11,15 @@ public class Borrow {
     private int id;
     private Integer userId;
     private Integer bookId;
-    private Date borrowDate;
+    private LocalDate borrowDate;
 
-    public Borrow(Integer userId, Integer bookId, Date borrowDate) {
+    public Borrow(Integer userId, Integer bookId, LocalDate borrowDate) {
         this.userId = userId;
         this.bookId = bookId;
         this.borrowDate = borrowDate;
     }
 
-    public Borrow(int id, Integer userId, Integer bookId, Date borrowDate) {
+    public Borrow(int id, Integer userId, Integer bookId, LocalDate borrowDate) {
         this(userId, bookId, borrowDate);
         this.id = id;
     }
